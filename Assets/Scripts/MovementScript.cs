@@ -25,7 +25,6 @@ public class MovementScript : MonoBehaviour
     public void MoveObject(float acceleration, Vector2 direction)
     {
         Vector2 ForceToAdd = direction.normalized * acceleration * Time.deltaTime;
-
         rb.AddForce(ForceToAdd);
     }
 }
