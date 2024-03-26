@@ -2,7 +2,7 @@
 
 public class DestroyedOnExit : MonoBehaviour
 {
-    // Called when the object leaves the viewport
+    // Destory the GameObject when it is no longer visable by the camera (Unity Function)
     void OnBecameInvisible()
     {
         Destroy(gameObject);
