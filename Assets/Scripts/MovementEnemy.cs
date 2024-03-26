@@ -6,12 +6,13 @@ public class MovementEnemy : MonoBehaviour
     private float initialVelocity = 2f;
     private Vector2 movementDirection = Vector2.down;
 
-    public MovementScript movement;
+    private MovementScript movement;
 
     private void Start()
     {
         movement = GetComponent<MovementScript>();
-        movement.RigidbodySetup(initialVelocity, movementDirection);
+        movement.RigidbodySetup();
+        movement.RigidbodyVelocitySetup(initialVelocity, movementDirection);
     }
 
     private void Update()
