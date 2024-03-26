@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class BulletMovement : MonoBehaviour
+public class MovementBullet : MonoBehaviour
 {
     private float acceleration = 50f;
     private float initialVelocity = 5f;

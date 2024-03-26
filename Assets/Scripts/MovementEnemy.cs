@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour
+public class MovementEnemy : MonoBehaviour
 {
     private float acceleration = 75f;
     private float initialVelocity = 2f;
