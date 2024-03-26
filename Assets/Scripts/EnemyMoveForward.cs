@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class EnemyMoveForward : MonoBehaviour {
+public class EnemyMoveForward : MonoBehaviour
+{
 
     private float acceleration = 75f;
-
     private float initialVelocity = 2f;
 
     private Rigidbody2D ourRigidbody;
@@ -13,7 +12,6 @@ public class EnemyMoveForward : MonoBehaviour {
     void Start()
     {
         ourRigidbody = GetComponent<Rigidbody2D>();
-
         ourRigidbody.velocity = Vector2.down * initialVelocity;
     }
 

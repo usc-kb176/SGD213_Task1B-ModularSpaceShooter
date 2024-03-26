@@ -48,7 +48,8 @@ public class ShootingScript : MonoBehaviour
     /// </summary>
     /// <param name="number">any integer</param>
     /// <returns>the number parameter as a float</returns>
-    public float SampleMethod(int number) {
+    public float SampleMethod(int number)
+    {
         return number;
     }
 
