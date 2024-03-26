@@ -33,9 +33,5 @@ public class DestroyedOnCollision : MonoBehaviour
             // Destroy if it's a Whitelist and the tag is NOT in the Whitelist
             Destroy(gameObject);
         }
-        else
-        {
-            // Use default collision code
-        }
     }
 }
