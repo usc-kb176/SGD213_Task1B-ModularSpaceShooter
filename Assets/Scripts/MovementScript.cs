@@ -5,14 +5,21 @@ public class MovementScript : MonoBehaviour
     private Rigidbody2D rb;
 
     /// <summary>
-    /// RigidbodySetup() - Setup a Rigidbody2D with velocity using a 
+    /// RigidbodySetup() - Setup a Rigidbody2D on a GameObject
+    /// </summary>
+    public void RigidbodySetup()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    /// <summary>
+    /// RigidbodyVelocitySetup() - Setup a Rigidbody2D with velocity using a 
     /// direction (up, down, left, right) and an initial velocity.
     /// </summary>
     /// <param name="direction">Vector2.direction (up, down, left, right)</param>
     /// <param name="initialVelocity">float</param>
-    public void RigidbodySetup(float initialVelocity, Vector2 direction)
+    public void RigidbodyVelocitySetup(float initialVelocity, Vector2 direction)
     {
-        rb = GetComponent<Rigidbody2D>();
         rb.velocity = direction.normalized * initialVelocity;
     }
 
@@ -26,5 +33,16 @@ public class MovementScript : MonoBehaviour
     {
         Vector2 ForceToAdd = direction.normalized * acceleration * Time.deltaTime;
         rb.AddForce(ForceToAdd);
+    }
+
+    public void MovePlayer(float acceleration, Vector2 direction)
+    {
+        float horizontalInput = Input.GetAxis("Horizontal");
+
+        if (horizontalInput != 0.0f)
+        {
+            Vector2 ForceToAdd = direction.normalized * horizontalInput * acceleration * Time.deltaTime;
+            rb.AddForce(ForceToAdd);
+        }
     }
 }
