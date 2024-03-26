@@ -11,15 +11,15 @@ public class SpawnOverTimeScript : MonoBehaviour
     [SerializeField]
     private float spawnDelay = 2f;
 
-    private Renderer renderer;
+    private Renderer render;
 
     // Use this for initialization
     void Start()
     {
-        renderer = GetComponent<Renderer>();
+        render = GetComponent<Renderer>();
 
         // Stop our Spawner from being visible!
-        renderer.enabled = false;
+        render.enabled = false;
 
         // Call the given function after spawnDelay seconds, 
         // and then repeatedly call it after spawnDelay seconds.
@@ -28,8 +28,8 @@ public class SpawnOverTimeScript : MonoBehaviour
 
     void Spawn()
     {
-        float x1 = transform.position.x - renderer.bounds.size.x / 2;
-        float x2 = transform.position.x + renderer.bounds.size.x / 2;
+        float x1 = transform.position.x - render.bounds.size.x / 2;
+        float x2 = transform.position.x + render.bounds.size.x / 2;
 
         // Randomly pick a point within the spawn object
         Vector2 spawnPoint = new Vector2(Random.Range(x1, x2), transform.position.y);
