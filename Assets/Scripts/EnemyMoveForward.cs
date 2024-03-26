@@ -6,13 +6,13 @@ public class EnemyMoveForward : MonoBehaviour
     private float acceleration = 75f;
     private float initialVelocity = 2f;
 
-    private Rigidbody2D ourRigidbody;
+    private Rigidbody2D rb;
 
     // Use this for initialization
     void Start()
     {
-        ourRigidbody = GetComponent<Rigidbody2D>();
-        ourRigidbody.velocity = Vector2.down * initialVelocity;
+        rb = GetComponent<Rigidbody2D>();
+        rb.velocity = Vector2.down * initialVelocity;
     }
 
     // Update is called once per frame
@@ -20,6 +20,6 @@ public class EnemyMoveForward : MonoBehaviour
     {
         Vector2 ForceToAdd = Vector2.down * acceleration * Time.deltaTime;
 
-        ourRigidbody.AddForce(ForceToAdd);
+        rb.AddForce(ForceToAdd);
     }
 }

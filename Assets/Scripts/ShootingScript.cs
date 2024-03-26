@@ -6,11 +6,10 @@ public class ShootingScript : MonoBehaviour
     [SerializeField]
     private GameObject bullet;
 
-    private float lastFiredTime = 0f;
-
     [SerializeField]
     private float fireDelay = 1f;
 
+    private float lastFiredTime = 0f;
     private float bulletOffset = 2f;
 
     void Start()
@@ -25,19 +24,17 @@ public class ShootingScript : MonoBehaviour
     {
         if (Input.GetButton("Fire1"))
         {
-            float CurrentTime = Time.time;
+            float currentTime = Time.time;
 
             // Have a delay so we don't shoot too many bullets
-            if (CurrentTime - lastFiredTime > fireDelay)
+            if (currentTime - lastFiredTime > fireDelay)
             {
                 Vector2 spawnPosition = new Vector2(transform.position.x, transform.position.y + bulletOffset);
 
                 Instantiate(bullet, spawnPosition, transform.rotation);
 
-                lastFiredTime = CurrentTime;
+                lastFiredTime = currentTime;
             }
-
-            //print("Shoot!");
         }
     }
 
