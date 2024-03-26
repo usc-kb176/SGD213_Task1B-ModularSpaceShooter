@@ -18,5 +18,4 @@ public class BulletMovement : MonoBehaviour
     {
         movement.MoveObject(acceleration, movementDirection);
     }
-
 }
