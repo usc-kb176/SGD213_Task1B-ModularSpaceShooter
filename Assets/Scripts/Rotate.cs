@@ -5,9 +5,9 @@ public class Rotate : MonoBehaviour
     [SerializeField]
     private float maximumSpinSpeed = 200;
 
-    // Use this for initialization
     void Start()
     {
+        // Set the angluar velocity of a Rigidbody2D using maximumSpinSpeed
         GetComponent<Rigidbody2D>().angularVelocity = Random.Range(-maximumSpinSpeed, maximumSpinSpeed);
     }
 }
