@@ -28,12 +28,12 @@ public class SpawnOverTimeScript : MonoBehaviour
     void Spawn()
     {
         // Calculates the minimum x-coordinate that objects can spawn
-        float x1 = transform.position.x - render.bounds.size.x / 2;
+        float minXBound = transform.position.x - render.bounds.size.x / 2;
         // Calculates the maximum x-coordinate that objects can spawn
-        float x2 = transform.position.x + render.bounds.size.x / 2;
+        float maxXBound = transform.position.x + render.bounds.size.x / 2;
 
         // Randomly pick a point within the spawn object
-        Vector2 spawnPoint = new Vector2(Random.Range(x1, x2), transform.position.y);
+        Vector2 spawnPoint = new Vector2(Random.Range(minXBound, maxXBound), transform.position.y);
 
         // Spawn the object at the 'spawnPoint' position
         Instantiate(spawnObject, spawnPoint, Quaternion.identity);
