@@ -35,14 +35,20 @@ public class MovementScript : MonoBehaviour
         rb.AddForce(ForceToAdd);
     }
 
+    /// <summary>
+    /// MovePlayer() - If horizontal input is detected then, add force to the player in that direction
+    /// </summary>
+    /// <param name="acceleration">float</param>
+    /// <param name="direction">Vector2.direction (up, down, left, right)</param>
     public void MovePlayer(float acceleration, Vector2 direction)
     {
         float horizontalInput = Input.GetAxis("Horizontal");
 
+        // Make sure there is horizontal input
         if (horizontalInput != 0.0f)
         {
-            Vector2 ForceToAdd = direction.normalized * horizontalInput * acceleration * Time.deltaTime;
-            rb.AddForce(ForceToAdd);
+            Vector2 forceToAdd = direction.normalized * horizontalInput * acceleration * Time.deltaTime;
+            rb.AddForce(forceToAdd);
         }
     }
 }
