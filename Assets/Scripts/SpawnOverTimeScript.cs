@@ -2,7 +2,6 @@
 
 public class SpawnOverTimeScript : MonoBehaviour
 {
-
     // Object to spawn
     [SerializeField]
     private GameObject spawnObject;
@@ -28,7 +27,9 @@ public class SpawnOverTimeScript : MonoBehaviour
 
     void Spawn()
     {
+        // Calculates the minimum x-coordinate that objects can spawn
         float x1 = transform.position.x - render.bounds.size.x / 2;
+        // Calculates the maximum x-coordinate that objects can spawn
         float x2 = transform.position.x + render.bounds.size.x / 2;
 
         // Randomly pick a point within the spawn object
