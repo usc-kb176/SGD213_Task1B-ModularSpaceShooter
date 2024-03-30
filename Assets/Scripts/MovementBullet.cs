@@ -10,6 +10,7 @@ public class MovementBullet : MonoBehaviour
 
     private void Start()
     {
+        // Call the functions within the movement script to setup Rigidbody & Rigidbody Velocity
         movement = GetComponent<MovementScript>();
         movement.RigidbodySetup();
         movement.RigidbodyVelocitySetup(initialVelocity, movementDirection);

@@ -10,6 +10,7 @@ public class MovementEnemy : MonoBehaviour
 
     private void Start()
     {
+        // Call the functions within the movement script to setup Rigidbody & Rigidbody Velocity
         movement = GetComponent<MovementScript>();
         movement.RigidbodySetup();
         movement.RigidbodyVelocitySetup(initialVelocity, movementDirection);
@@ -17,6 +18,7 @@ public class MovementEnemy : MonoBehaviour
 
     private void Update()
     {
+        // Call MoveObject every frame
         movement.MoveObject(acceleration, movementDirection);
     }
 }
